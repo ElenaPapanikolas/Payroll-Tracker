@@ -2,6 +2,11 @@
 const addEmployeesBtn = document.querySelector('#add-employees-btn');
 
 const employeesArray = []; // declaring the array
+let employee = { // created the object, declaring it globally
+  firstName: '',
+  lastName: '',
+  salary: '',
+};
 
 // Collect employee data
 const collectEmployees = function() {
@@ -11,7 +16,7 @@ const collectEmployees = function() {
 
   while (addAnother) { // created a while loop, it will run until condition is no longer true
 
-  let employee = { // created the object
+  employee = { // referencing the object
     firstName: '',
     lastName: '',
     salary: '',
@@ -19,7 +24,7 @@ const collectEmployees = function() {
 
   employee.firstName = prompt("Please enter employee's first name.");  // created prompts
   employee.lastName = prompt("Please enter employee's last name.");
-  employee.salary = prompt("Please enter employee's salary.");
+  employee.salary = +prompt("Please enter employee's salary."); // added + 
 
   if (isNaN(employee.salary)) { // manually setting employee salary to 0 if user enters a non number
     employee.salary = 0;
@@ -40,6 +45,12 @@ console.log(employeesArray); // logging employees array to the console
 // Display the average salary
 const displayAverageSalary = function(employeesArray) {
   // TODO: Calculate and display the average salary
+  let sum = 0;
+  for (let i = 0; i < employeesArray.length; i++) { // to find the sum of all salaries
+    sum += employeesArray[i].salary;
+  }
+  let averageSalary = (sum / employeesArray.length).toLocaleString('en-US', {style: 'currency', currency: 'USD'}); // to find the average of all salaries. Added method conversion to US dollars
+  console.log(`The average employee salary between our ${employeesArray.length} employee(s) is ${averageSalary}`); // is to console log the average salary
 }
 
 // Select a random employee
