@@ -30,7 +30,7 @@ const collectEmployees = function() {
   };
 
   if (!confirm("Do you want to add another employee?")) { // this is the 'yes' or 'cancel' button
-    addAnother = false; // changing boolean to false if confirm is false
+    addAnother = false; // changing boolean variable to false if confirm is false
   };
   employeesArray.push(employee); // adds all employee information to employees array
   }
@@ -55,8 +55,8 @@ const displayAverageSalary = function(employeesArray) {
 // Select a random employee
 const getRandomEmployee = function(employeesArray) {
   // TODO: Select and display a random employee
-  Math.floor(Math.random() * employeesArray.length);  // generates random employee
-  console.log(`Congratulations ${employee.firstName} ${employee.lastName}, our random drawing winner!!!`); // logging random winner to the console
+  const randomWinner = employeesArray[Math.floor(Math.random() * employeesArray.length)];  // declares variable to store random winner value
+  console.log(`Congratulations ${randomWinner.firstName} ${randomWinner.lastName}, our random drawing winner!!!`); // logging random winner to the console
 }
 
 
