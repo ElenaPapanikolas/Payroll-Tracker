@@ -2,7 +2,7 @@
 const addEmployeesBtn = document.querySelector('#add-employees-btn');
 
 const employeesArray = []; // declaring the array
-let employee = { // created the object, declaring it globally
+let employee = { // created the object that holds employee information, declaring it globally
   firstName: '',
   lastName: '',
   salary: '',
@@ -12,7 +12,7 @@ let employee = { // created the object, declaring it globally
 const collectEmployees = function() {
   // TODO: Get user input to create and return an array of employee objects
 
-  let addAnother = true;  // created a boolean variable to control the loop
+  let addAnother = true;  // created a boolean variable to control the loop, if true keep adding employees
 
   while (addAnother) { // created a while loop, it will run until condition is no longer true
 
@@ -22,10 +22,9 @@ const collectEmployees = function() {
     salary: '',
   };
 
-  employee.firstName = prompt("Please enter employee's first name.");  // created prompts
+  employee.firstName = prompt("Please enter employee's first name.");  // created prompts, where user enters information
   employee.lastName = prompt("Please enter employee's last name.");
-  employee.salary = +prompt("Please enter employee's salary."); // added + 
-
+  employee.salary = parseInt(prompt("Please enter employee's salary.")); // added parseInt to ensure input is a number
   if (isNaN(employee.salary)) { // manually setting employee salary to 0 if user enters a non number
     employee.salary = 0;
   };
@@ -33,12 +32,12 @@ const collectEmployees = function() {
   if (!confirm("Do you want to add another employee?")) { // this is the 'yes' or 'cancel' button
     addAnother = false; // changing boolean to false if confirm is false
   };
-  employeesArray.push(employee); // to add all employee information to employees array
+  employeesArray.push(employee); // adds all employee information to employees array
   }
   return employeesArray; // returns all data entered from user as an array of objects
 
 };
-console.log(employeesArray); // logging employees array to the console
+// console.log(employeesArray); // was going to console log employees array to the console, but its already being logged with console.table on line 111
 
 
 
@@ -56,6 +55,8 @@ const displayAverageSalary = function(employeesArray) {
 // Select a random employee
 const getRandomEmployee = function(employeesArray) {
   // TODO: Select and display a random employee
+  Math.floor(Math.random() * employeesArray.length);  // generates random employee
+  console.log(`Congratulations ${employee.firstName} ${employee.lastName}, our random drawing winner!!!`); // logging random winner to the console
 }
 
 
