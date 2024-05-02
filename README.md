@@ -14,6 +14,12 @@ N/A
 ## Usage
 The user is presented with an empty Employee Roster. By clicking the "Add Employee" button you're prompted with three separate prompts to enter the employee's first name, last name, and salary. For the salary field, the user is is expected to enter a number, and if they enter something other than a number, the application will enter 0. This is made possible with the isNaN function. The user either keeps adding as many employees as they want, or clicks the cancel button to stop adding more employees, and then all the entered information will be put into the roster list. It is displayed on the page, sorted alphabetically by last name. If the user inspects the page with DevTools, they will see the average employee salary has been logged to the console. They will also see a randomized drawing winner has been logged to the console as well.
 
+[Click here](https://elenapapanikolas.github.io/Payroll-Tracker/) for deployed application.
+
+!["Screenshott of roster"](./assets/Images/screenshotpayrolltracker.png)
+
+!["Screenshot of console"](/assets/Images/screenshotpayroltracker2.png)
+
 
 ## Credits
 
